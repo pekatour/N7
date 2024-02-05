@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Push_GitLab
 
 # Controls when the workflow will run
 on:
@@ -22,15 +22,18 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-        with:
-          token: ${{ secrets.SSH_PRIVATE_KEY}}
             
       # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+      # - name: Run a one-line script
+      #  run: echo Hello, world!
 
       # Runs a set of commands using the runners shell
-      - name: Mirror to gitlab
+      - name: Push generated webpage to another repository
+        env:
+          token: ${{ secrets.SSH_PRIVATE_KEY}}
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          echo Starting to push repo to gitlab
+          git config user.name "tkn7092"
+          git config user.email "timothee.klein@etu.inp-n7.fr"
+          git remote set-url origin "https://oauth2:${token}@gitlab.com/pekatour/N7.git"
+          git push origin master
