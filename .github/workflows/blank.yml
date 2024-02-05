@@ -36,4 +36,5 @@ jobs:
           git config user.name "tkn7092"
           git config user.email "timothee.klein@etu.inp-n7.fr"
           git remote set-url origin "https://oauth2:${token}@gitlab.com/n7-rnote/N7.git"
+          git pull
           git push origin main
