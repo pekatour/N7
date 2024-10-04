@@ -1,0 +1,16 @@
+# dune runtest
+# OCAMLPARAM: unset
+# Shared cache: disabled
+# Shared cache location: /home/pekatour/.cache/dune/db
+# Workspace root: /home/pekatour/Documents/Perso/RnoteN7/S7/PF
+# Auto-detected concurrency: 16
+# Dune context:
+#  { name = "default"
+#  ; kind = "default"
+#  ; profile = Dev
+#  ; merlin = true
+#  ; fdo_target_exe = None
+#  ; build_dir = In_build_dir "default"
+#  ; instrument_with = []
+#  }
+$ /home/pekatour/.opam/4.11.0/bin/ocamlc.opt -config > /tmp/dune_cf641a_output
